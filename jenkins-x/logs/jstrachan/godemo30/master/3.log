@@ -1,0 +1,80 @@
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-rmssz[0m
+{"level":"warn","ts":1584554048.6045783,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584554048.6051898,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-jjlp7[0m
+{"level":"warn","ts":1584554049.593372,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584554049.5945146,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-godemo30-master-fxwqb-szjv5[0m
+{"level":"warn","ts":1584554056.6673195,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584554057.759216,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/godemo30.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Cloning the Jenkins X versions repo https://github.com/jenkins-x-labs/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/godemo30 main.go
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+ERROR: logging before flag.Parse: E0318 17:54:28.907796      11 metadata.go:241] Failed to unmarshal scopes: invalid character 'h' looking for beginning of value
+[36mINFO[0m[0001] No base image, nothing to extract            
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0001] Taking snapshot of full filesystem...        
+[36mINFO[0m[0001] EXPOSE 8080                                  
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] ENTRYPOINT ["/godemo30"]                     
+[36mINFO[0m[0001] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0001] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0001] COPY ./bin/ /                                
+[36mINFO[0m[0001] Taking snapshot of files...                  
+2020/03/18 17:54:32 pushed blob: sha256:40c7478eb77da6c573dcaa8ef22e0ef0932b6a0e389bd905e7dc4b8e5d9f84ac
+2020/03/18 17:54:33 pushed blob: sha256:c0e6730ee5512ef8e199d3c0e78d1fb1230a4947229ba3c82804c11825e830ff
+2020/03/18 17:54:34 gcr.io/*********-multicluster/godemo30:0.0.3: digest: sha256:4d35a0596b5177b988eba085298ba592c519d9829bc25c0c754fcbf31be1f763 size: 428
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/godemo30 to an unshallow repository
+Generating change log from git ref f0bff757b68ee30fec9ec325e2b0532d213dcb1d => ee1451f05f7d215a0d002edf6b4931db929fdc4a
+WARNING: No release found for *********/godemo30 and tag v0.0.3 so creating a new release
+Updated the release information at https://github.com/*********/godemo30/releases/tag/v0.0.3
+generated: /workspace/source/charts/godemo30/templates/release.yaml
+Created Release godemo30-0-0-3 resource in namespace **
+Updating PipelineActivity *********-godemo30-master-3 with version 0.0.3
+Updated PipelineActivities *********-godemo30-master-3 with release notes URL: https://github.com/*********/godemo30/releases/tag/v0.0.3
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: bucketrepo http://bucketrepo/bucketrepo/charts/
+Successfully added Helm repository bucketrepo.
+Uploading chart file godemo30-0.0.3.tgz to http://bucketrepo/bucketrepo/charts/api/charts
+Received 200 response: 
+
+Showing logs for build [32mjstrachan-godemo30-master-fxwqb-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app godemo30 version 0.0.3 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*********/environment-bucketrepo-staging/pull/22
+Added label updatebot to Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/22
+WARNING: Failed to query the Pull Request last commit status for https://github.com/*********/environment-bucketrepo-staging/pull/22 ref e3b1f152b82f493df6df0034cd24f1e1047c9c18 Could not find a status for repository *********/environment-bucketrepo-staging with ref e3b1f152b82f493df6df0034cd24f1e1047c9c18
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/22
+got git provider status pending from PR https://github.com/*********/environment-bucketrepo-staging/pull/22
+Pull Request https://github.com/*********/environment-bucketrepo-staging/pull/22 is merged at sha e322ffe3afac3e6cdb06d0030841d839003aff73
+Pull Request merged but we are not waiting for the update pipeline to complete!
