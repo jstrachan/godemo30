@@ -1,0 +1,25 @@
+
+Showing logs for build [32mjstrachan-godemo30-master-xsmgl-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-b82m7[0m
+{"level":"warn","ts":1584553952.954283,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584553952.9551058,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mjstrachan-godemo30-master-xsmgl-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-687rt[0m
+{"level":"warn","ts":1584553954.266492,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1584553954.2688928,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mjstrachan-godemo30-master-xsmgl-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mjstrachan-godemo30-master-xsmgl-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-jstrachan-godemo30-master-xsmgl-j982k[0m
+{"level":"warn","ts":1584553961.4346585,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1584553962.4772732,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*********/godemo30.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mjstrachan-godemo30-master-xsmgl-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:fa4044dca2db0f21fbccf4b77d679ebb46be61cd
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mjstrachan-godemo30-master-xsmgl-2[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+error: validation failures in requirements from team settings:
+ingress: Additional property kind is not allowed
+environments.0.ingress: Additional property kind is not allowed
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-setup-jx-git-credentials'. The execution of the pipeline has stopped.[0m
